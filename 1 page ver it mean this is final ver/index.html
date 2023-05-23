@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Game</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="index.js" async></script>
+</head>
+
+<body>
+    <div id="start-section">
+        <h1 class="heading">Welcome to the Quiz Game</h1>
+        <label for="category">Category:</label>
+        <select id="category">
+            <option value="" disabled selected></option>
+        </select>
+        
+        <div class="difficulty-section">
+            <label for="difficulty" class="difficulty-header">Difficulty:</label>
+            <div id="difficulty">
+                <input type="radio" id="easy" name="difficulty" value="easy" checked>
+                <label for="easy">Easy</label>
+                <input type="radio" id="medium" name="difficulty" value="medium">
+                <label for="medium">Medium</label>
+                <input type="radio" id="hard" name="difficulty" value="hard">
+                <label for="hard">Hard</label>
+            </div>
+        </div>
+
+        <button id="start-button" class="start">Start Quiz</button>
+    </div>
+
+    <div id="quiz-section" class="quiz-running" style="display: none;">
+        <div class="questionContainer">
+            <div id="timer"></div>
+            <h2 id="question"></h2>
+        </div>
+        
+        <div id="options"></div>
+        <button  class="quiz-nav-buttons" id="exit-button">Exit Quiz</button>
+        <button  class="quiz-nav-buttons" id="previous-button">Previous Question</button>
+        <button  class="quiz-nav-buttons" id="next-button">Next Question</button>
+       
+
+        <div id="confirmation-modal" class="modal">
+            <div class="modal-content">
+                <p>Are you sure you want to exit the quiz? Your progress will be lost.</p>
+                <div class="modal-buttons">
+                    <button id="confirm-reset" class="confirmReset">Confirm</button>
+                    <button id="cancel-reset" class="confirmCancel">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="end-section" class="quiz-finished" style="display: none;">
+        <h2>Quiz Finished</h2>
+        <p>Your score: <span id="score"></span></p>
+        <p>Your missed question</p>
+        <div id="results"></div>
+        <button id="play-again-button">Play Again</button>
+    </div>
+    <div class="footer">
+        <p>Kai, Aldrin, Ingrid, Wendy, Jill</p>
+    </div>
+</body>
+
+</html>
